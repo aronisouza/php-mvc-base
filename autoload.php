@@ -26,7 +26,7 @@ define('USER', 'root');
 define('PASS', '');
 define('DBSA', 'livros');
 
-// Apenas para verificar alguns arrays :: Uso administativo
+// Apenas para verificar alguns arrays :: Uso adm
 function getPreA(array $string)
 {
   echo '<pre>';
@@ -46,7 +46,7 @@ function getPre($string)
  * tipos de janelas:
  * 
  * success, info, warning e danger
- */ 
+*/
 function FLDmsg($msg, $msgTipo, $ErrDie = null)
 {
   echo "
