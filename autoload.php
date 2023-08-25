@@ -26,7 +26,7 @@ define('USER', 'root');
 define('PASS', '');
 define('DBSA', 'livros');
 
-// Apenas para verificar alguns arrays :: Uso administativo
+// Apenas para verificar alguns arrays :: Uso adm
 function getPreA(array $string)
 {
   echo '<pre>';
