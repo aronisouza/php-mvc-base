@@ -7,8 +7,10 @@ class homeController extends Controller
     Conexao::getConn();
     $r = new Read();
     //$r->ExeRead('livros');
-    $r->FullRead('SELECT autores FROM livros WHERE id=7');
+    $r->FullRead('SELECT * FROM livros WHERE id=200');
     $dados = $r->getResult();
+
+    //getPre($dados);
     $this->carregarTemplate('home', $dados);
   }
 }
