@@ -41,9 +41,12 @@ function getPre($string)
   echo '</pre>';
 }
 
-//- FLDmsg :: Exibe mensagens na tela
-//- tipos de janelas
-//success, info, warning e danger
+/**
+ * FLDmsg :: Exibe mensagens na tela
+ * tipos de janelas:
+ * 
+ * success, info, warning e danger
+ */
 function FLDmsg($msg, $msgTipo, $ErrDie = null)
 {
   echo "
