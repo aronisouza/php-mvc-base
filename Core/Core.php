@@ -33,7 +33,7 @@ class Core
       $controller = 'homeController';
       $metodo = 'index';
     }
-
+    // colocar o caminho da pasta controllers
     $caminho = 'php/php-mvc/Controllers/' . $controller . '.php';
 
     // aqui futuramente criar a página 404
