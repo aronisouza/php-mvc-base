@@ -12,6 +12,7 @@ class Core
     $parametros = array();
     if (isset($_GET['pag'])) {
       $url = htmlentities(addslashes($_GET['pag']));
+      $url = filter_var($url, FILTER_SANITIZE_URL);
     }
 
     if (!empty($url)) {
@@ -22,28 +23,29 @@ class Core
       if (isset($url[0]) && !empty($url[0])) {
         $metodo = $url[0];
         array_shift($url);
-      } else {
-        $metodo = 'index';
       }
+      else $metodo = 'index';
 
-      if (count($url) > 0) {
-        $parametros = $url;
-      }
-    } else {
+      if (count($url) > 0) $parametros = $url;
+
+    } 
+    else {
       $controller = 'homeController';
       $metodo = 'index';
     }
-    // colocar o caminho da pasta controllers
-    $caminho = 'php/php-mvc/Controllers/' . $controller . '.php';
 
-    // aqui futuramente criar a página 404
-    // $controller = '404Controller';
+    $caminho = URL . "Controllers/" . $controller . ".php";
+
     if (!file_exists($caminho) && !method_exists($controller, $metodo)) {
-      $controller = 'homeController';
+      $controller = 'pag404Controller';
       $metodo = 'index';
     }
 
-    $c = new $controller;
-    call_user_func_array(array($c, $metodo), $parametros);
+    if (class_exists($controller) && method_exists($controller, $metodo)) {
+      $c = new $controller;
+      call_user_func_array(array($c, $metodo), $parametros);
+    } else {
+      echo "Handle error: controller or method not found";
+    }
   }
 }

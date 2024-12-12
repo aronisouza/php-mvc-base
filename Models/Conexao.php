@@ -22,7 +22,7 @@ class Conexao
         self::$Connect = new PDO($dsn, self::$User, self::$Pass, $options);
       endif;
     } catch (PDOException $e) {
-      FLDmsg("<b>Erro ao conectar:</b> {$e->getMessage()}", 'alert-warning', $e->getLine());
+      getMessage('danger',"<b>Erro ao Conectar:</b><br /> Mensagem: {$e->getMessage()}");
       die;
     }
     self::$Connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

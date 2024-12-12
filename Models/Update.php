@@ -6,10 +6,10 @@ class Update extends Conexao {
 	private $Places;
 	private $Result;
 	
-	/** @var PDOStatement */
+	//@var PDOStatement */
 	private $Update;
 	
-	/** @var PDO */
+	//@var PDO */
 	private $Conn;
 	
 	/**
@@ -80,7 +80,7 @@ class Update extends Conexao {
 			$this->Result = true;
 		} catch (PDOException $e) {
 			$this->Result = null;
-			FLDmsg("<b>Erro ao Atualizar:</b> {$e->getMessage()}", 'alert-warning', $e->getLine());
+			getMessage('danger',"<b>Erro ao Atualizar:</b><br /> Mensagem: {$e->getMessage()}");
 		}
 	}
 }

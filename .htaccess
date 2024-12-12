@@ -7,8 +7,3 @@ RewriteCond %{REQUEST_FILENAME} !-l
 RewriteRule ^(.*) /php/php-mvc/index.php?pag=$1
 
 ErrorDocument 403 https://github.com/aronisouza
-
-<Files .env>
-    Order allow,deny
-    Deny from all
-</Files>

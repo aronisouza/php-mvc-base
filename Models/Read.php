@@ -99,7 +99,7 @@ class Read extends Conexao
 			$this->Result = $this->Read->fetchAll();
 		} catch (PDOException $e) {
 			$this->Result = null;
-			FLDmsg("<b>Erro ao Ler:</b> {$e->getMessage()}", 'alert-warning', $e->getLine());
+			getMessage('danger',"<b>Erro ao Pesquisar:</b><br /> Mensagem: {$e->getMessage()}");
 		}
 	}
 }

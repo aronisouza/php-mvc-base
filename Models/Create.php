@@ -7,7 +7,7 @@ class Create extends Conexao {
 	//PDOStatement
 	private $Create;
 	
-	// @var PDO
+	//@var PDO
 	private $Conn;
 	
 	/**
@@ -52,7 +52,7 @@ class Create extends Conexao {
 			$this->Result = $this->Conn->lastInsertId();
 		} catch (PDOException $e) {
 			$this->Result = null;
-			FLDmsg("<b>Erro ao cadastrar:</b> {$e->getMessage()}", 'alert-warning', $e->getLine());
+			getMessage('danger',"<b>Erro ao Criar:</b><br /> Mensagem: {$e->getMessage()}");
 		}
 	}
 }

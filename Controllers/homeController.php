@@ -4,13 +4,9 @@ class homeController extends Controller
 {
   public function index()
   {
-    Conexao::getConn();
-    $r = new Read();
-    //$r->ExeRead('livros');
-    $r->FullRead('SELECT * FROM livros WHERE id=200');
+    $r = new Read;
+    $r->FullRead('SELECT * FROM livros WHERE id=6');
     $dados = $r->getResult();
-
-    //getPre($dados);
-    $this->carregarTemplate('home', $dados);
+    $this->carregarTemplate('home', $dados[0]);
   }
 }

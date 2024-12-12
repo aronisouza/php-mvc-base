@@ -54,7 +54,7 @@ class Delete extends Conexao {
 			$this->Result = true;
 		} catch (PDOException $e) {
 			$this->Result = null;
-			FLDmsg("<b>Erro ao Deletar:</b> {$e->getMessage()}", 'alert-warning', $e->getLine());
+			getMessage('danger',"<b>Erro ao Deletar:</b><br /> Mensagem: {$e->getMessage()}");
 		}
 	}
 }
