@@ -4,6 +4,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-l
 
-RewriteRule ^(.*) /php/php-mvc/index.php?pag=$1
+RewriteRule ^(.*) /php-mvc-base/index.php?pag=$1
 
 ErrorDocument 403 https://github.com/aronisouza
